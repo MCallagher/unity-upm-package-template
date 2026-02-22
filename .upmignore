@@ -1,0 +1,8 @@
+.github
+.vscode
+bin
+obj
+.upmignore
+*.csproj
+*.sln
+*.slnx

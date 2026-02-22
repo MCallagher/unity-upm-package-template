@@ -1,0 +1,11 @@
+{
+  "name": "johndoe.mycompany.sample-system",
+  "version": "0.1.0",
+  "description": "This is a sample packate.",
+  "displayName": "Sample System",
+  "unity": "6000.0",
+  "author": {
+    "name": "Marco Calandro",
+    "email": "marco.calandro@mensa.it"
+  }
+}
