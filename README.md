@@ -35,7 +35,7 @@ The limitation of this template are:
 - It is not possible to use Unity classes
 - Runtime tests in unity are not available
 
-## How does it works
+## How does it work
 Before starting, let's assume that we are developing a system called
 "SampleSystem" and that we are going to build tests and write documentation for
 it. Now, let's analyse every file and folder to understand what's their role.
@@ -63,8 +63,8 @@ To instantiate the framework, there are several spots that need to be changed.
 Many of those spots can be changed with find-replace on the placeholder names.
 
 The placeholder used are the following:
-| Placeholde | Description |
-| ---------- | ----------- |
+| Placeholder | Description |
+| ----------- | ----------- |
 | SampleSystem | The name of the system implemented |
 | johndoe.mycompany.sample-system | The name of the package |
 | Sample System | Name of the system shown in Unity |
@@ -90,3 +90,7 @@ The spots to change:
   - Rename file
 - /README.md
   - Change content
+
+## Maintenance
+The project is maintained by me, feel free to reach out for a feedback or just
+to let me know if this was useful to you and saved you some time.
