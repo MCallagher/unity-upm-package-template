@@ -91,6 +91,15 @@ The spots to change:
 - /README.md
   - Change content
 
+In addition, there are few settings to tweak to make everything work smoothly.
+
+To make the Github action work, you need to allow read and write permissions in order to push to the "upm" branch:
+- On the repository on GitHub, go to Setting/Action/General/Workflow permissions and allow read and write permission for the GITHUB_TOKEN.
+
+After you imported the package in Unity with the Asset Manager, to make the tests appear on the Unity Test Runner, you need to specify that the package you are importing (name specified in package.json) is testable:
+- On the Unity project, go to the Packages/manifest.json file and add:
+  - "testables" : ["johndoe.mycompany.sample-system"]
+
 ## Maintenance
 The project is maintained by me, feel free to reach out for a feedback or just
 to let me know if this was useful to you and saved you some time.
