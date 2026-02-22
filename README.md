@@ -67,6 +67,8 @@ The placeholder used are the following:
 | ---------- | ----------- |
 | SampleSystem | The name of the system implemented |
 | johndoe.mycompany.sample-system | The name of the package |
+| Sample System | Name of the system shown in Unity |
+| Description placeholder | Description of the system shown in Unity |
 
 The spots to change:
 - /Editor/SampleSystem.asmdef
@@ -86,3 +88,5 @@ The spots to change:
   - Change author.email
 - /SampleSystem.csproj
   - Rename file
+- /README.md
+  - Change content
