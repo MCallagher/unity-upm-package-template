@@ -1,0 +1,95 @@
+<mxfile host="65bd71144e" scale="2" border="0">
+    <diagram id="0LSb1ZtklV-mL9IDXEPQ" name="Page-1">
+        <mxGraphModel dx="730" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="3200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="32" value="m" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="660" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="Package" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=default;strokeColor=#b85450;fontSize=16;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="60" width="140" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Development" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=default;strokeColor=#6c8ebf;fontSize=16;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="60" width="140" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="Setup" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=default;strokeColor=#d6b656;fontSize=16;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="60" width="140" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="5" target="35" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Clone template" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="35" target="36" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="280"/>
+                            <mxPoint x="250" y="280"/>
+                            <mxPoint x="250" y="130"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="Replace placeholders" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="36" target="37" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Develop code" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="37" target="38" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Develop test" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="38" target="46" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="370" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="Run Test&lt;div&gt;locally&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="290" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="46" target="47" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="490" y="420"/>
+                            <mxPoint x="490" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="Push changes on master" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="47" target="50" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Build package with GH Action" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" parent="1" source="57" target="55" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Load package into Unity" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="Run test&lt;div&gt;in Unity&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=3;" edge="1" parent="1" source="50" target="57">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="610" y="250" as="sourcePoint"/>
+                        <mxPoint x="610" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" value="Register tests on Unity" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="290" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

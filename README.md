@@ -1,105 +1,114 @@
-# Unity UPM Package template
-This repository provide a template to develop a UPM package for Unity.
 
-The purpose is to speed-up the setup, the development, and the testing of a new
-UPM package, providing a framework that solves many issues that could hinder the
-efficiency of the development.
+# Unity UPM Package Template
+This repository provides a template to develop a UPM package for Unity and is designed to speed up setup, development, and testing of packages that contain pure logic (no Unity-specific runtime classes). It provides a framework that solves many issues that could hinder the efficiency of the development.
 
-This template was designed to build packages for systems that provide pure logic
-to Unity, but without using its elements (e.g. MonoBehavior, Components).
-E.g. A system to generate a map based on a seeds, a system to compute the price
-variation of a merchant's items.
+![Overview](/img/overview.png)
 
-## Features
-There are two features that this repository aims to achieve:
-- Independence from Unity during the development
-    - The code can be developed without Unity
-    - The code can be tested without Unity
-- Full compatibility with Unity
-    - The code can be imported in Unity as a UPM Package
+## Key Features
+- **Develop and test without Unity.** Write and run tests using dotnet/NUnit.
+- **Full Unity compatibility.** Package structure, .asmdef files, and package.json are ready for UPM import.
+- **UPM Package generation.** GitHub Action generates a clean UPM package.
 
-The independence from Unity means that it is not required to have Unity open or
-even to have Unity at all. All the development should focus on the logic that is
-being developed.
+## Limitations
+- **No Unity classes.** The template is for logic-only code and does not support Unity-specific runtime classes (e.g., MonoBehaviour, ScriptableObject).
+- **No runtime tests in Unity.** Runtime tests that require the Unity player are not provided by this template.
 
-The compatibility with Unity is obtained by having:
+## Repository Layout
+Overall the layout of files and folders follows the Unity standard for a UPM package with the addition of some files that are required for the management of the repository, e.g. the local project setup.
+
+| Path                                  | Purpose                                                  |
+| ------------------------------------- | -------------------------------------------------------- |
+| /Documentation                        | Markdown docs for the package                            |
+| /Editor                               | Package source code (namespace: SampleSystem)            |
+| /Editor/SampleSystem.asmdef           | Unity assembly definition for the package                |
+| /Test/Editor                          | Unit tests (namespace: SampleSystem.Test)                |
+| /Test/Editor/SampleSystem.Test.asmdef | Test assembly definition for Unity Test Runner           |
+| SampleSystem.csproj                   | dotnet project file for local development and tests      |
+| package.json                          | UPM package metadata                                     |
+| .upmignore                            | Files and patterns excluded when building the UPM branch |
+
+The repository uses two branches, main and upm, that cover local and unity side: the main branch is used to develop and test the software for the package whereas the upm branch contains only the minimal information required by Unity for a UPM package. The content of these branch is kept aligned by a GitHub Action.
+
+![How it works](/img/howitworks.png)
+
+## Placeholders
+The template contains several placeholders that are used consistently to simplify their replacements with the real values required to instantiate a new package. The placeholder list with their meaning is shown in the following table.
+
+| Placeholder                     | Meaning                                                  |
+| ------------------------------- | -------------------------------------------------------- |
+| SampleSystem                    | Package code and assembly name                           |
+| johndoe.mycompany.sample-system | UPM package name (keep this placeholder in the template) |
+| John Doe                        | Author name shown in Unity                               |
+| john.doe@email.com              | Author email shown in Unity                              |
+| Sample System                   | Display name shown in Unity                              |
+| Description placeholder         | Short package description shown in Unity                 |
+
+The placeholders appears both in file content and in file names; so the replace can mostly be done with a case sensitive find-replace at project level plus renaming few files. To provide a double check, all the spots that use a placeholder are shown in the following table.
+
+| File                                  | Changes                                                          |
+| ------------------------------------- | ---------------------------------------------------------------- |
+| /Editor/SampleSystem.asmdef           | rename file; update name and rootNamespace                       |
+| /Test/Editor/SampleSystem.Test.asmdef | rename file; update name, rootNamespace, and references          |
+| /package.json                         | update name, displayName, description, author.name, author.email |
+| /SampleSystem.csproj                  | rename file                                                      |
+| /README.md                            | update content to describe your package                          |
+
+## Quickstart
+The overall workflow has just three phases: setup the template, develop locally, bring the package to Unity. But for clarity, all the required steps are explicitly described.
+
+1. Clone the template
+2. Replace placeholders listed above
+3. Develop the software
+4. Develop the unit tests
+5. Run and debug tests locally
+    - You may use the ```dotnet test```
+6. Push the changes to main
+    - This step triggers the GitHub Action
+7. Generate the package on upm branch with the GitHub Action
+    - The GITHUB_TOKEN must have the read and write permission on the repo
+8. Import package into Unity
+    - Use the Asset Manager to load the package
+9. Make tests visible in Unity
+    - Add the package to dependencies and testables in "MyUnityProject/Packages/manifest.json"
+10. Run the test in Unity
+    - The test can be run in the Test Runner in the Editor section
+
+![Workflow suggested](/img/workflow.png)
+
+## Annex
+The section that follows present in deeper detail some of the topics presented above.
+
+### Unity compatibility
+The Unity compatibility is granted by several design choices:
 - Clear and standard folder and file structure
 - Tests implemented with NUit, same as Unity
-- CS Proj file that is set as Unity
-- Assembly files, that specify how the files should be compiled and used in
-    Unity
+- CS Proj file is set as Unity
+- Use of Unity Assembly Definition files, that specify how the files should be compiled and used in Unity
 - GitHub action that build a clean package in a specific branch
 
-## Limitation
-The limitation of this template are:
-- It is not possible to use Unity classes
-- Runtime tests in unity are not available
+### UPM package builder - GitHub Action
+The repository includes a GitHub Actions workflow (.github/workflows/sync-upm.yml) that runs automatically on every push to the main branch and creates a clean UPM-ready copy of the package on the upm branch. The job checks out the main branch, filters out files and folders that match the patterns listed in .upmignore (removing editor settings, build artifacts, CI files, etc.), assembles the remaining package tree, and then commits and pushes those changes to upm using the GITHUB_TOKEN.
 
-## How does it work
-Before starting, let's assume that we are developing a system called
-"SampleSystem" and that we are going to build tests and write documentation for
-it. Now, let's analyse every file and folder to understand what's their role.
+To allow the workflow to push the cleaned package you must enable Actions read and write permissions for the GITHUB_TOKEN in the repository settings: Setting/Action/General/Workflow permissions.
 
-| Element | Function |
-| ------- | -------- |
-| /Documentation | Contains the documentation, written in markdown |
-| /Editor | Contains the software of SampleSystem. All the software belongs to SampleSystem namespace. |
-| /Editor/SampleSystem.asmdef | Unity Assembly Definition file, just specify name and namespace of the software. |
-| /Test/Editor | Contains the tests for SampleSystem. All the software belongs to SampleSystem.Test namespace. |
-| /Test/Editor/SampleSystem.Test.asmdef | Unity Assembly Definition file, states that this folder contains tests and tells Unity how to include them in Test Runner |
-| SampleSystem.csproj | Defines the dotnet configuration and the tests libraries |
-| package.json | Specifies the UPM package information |
-| CHANGELOG.md | Contains the changes between the various versions of the software |
-| README.md | Contains the information on the package |
-| .upmignore | Contains the list of files that should not appear in the upm package |
-
-The "main" branch contains more files than the ones needed by the UPM package.
-To clean the repository, a GitHub action push all the changes made in "main" to
-a new branch "upm" filtering out the files that match an excluding pattern in
-".upmignore".
-
-## Getting started
-To instantiate the framework, there are several spots that need to be changed.
-Many of those spots can be changed with find-replace on the placeholder names.
-
-The placeholder used are the following:
-| Placeholder | Description |
-| ----------- | ----------- |
-| SampleSystem | The name of the system implemented |
-| johndoe.mycompany.sample-system | The name of the package |
-| Sample System | Name of the system shown in Unity |
-| Description placeholder | Description of the system shown in Unity |
-
-The spots to change:
-- /Editor/SampleSystem.asmdef
-  - Rename file
-  - Change name
-  - Change rootNamespace
-- /Test/Editor/SampleSystem.Test.asmdef
-  - Rename file
-  - Change name
-  - Change rootNamespace
-  - Change reference
-- /package.json
-  - Change name
-  - Change description
-  - Change displayName
-  - Change author.name
-  - Change author.email
-- /SampleSystem.csproj
-  - Rename file
-- /README.md
-  - Change content
-
-In addition, there are few settings to tweak to make everything work smoothly.
-
-To make the Github action work, you need to allow read and write permissions in order to push to the "upm" branch:
-- On the repository on GitHub, go to Setting/Action/General/Workflow permissions and allow read and write permission for the GITHUB_TOKEN.
-
-After you imported the package in Unity with the Asset Manager, to make the tests appear on the Unity Test Runner, you need to specify that the package you are importing (name specified in package.json) is testable:
-- On the Unity project, go to the Packages/manifest.json file and add:
-  - "testables" : ["johndoe.mycompany.sample-system"]
+### Unity Test Runner
+The display of tests in Unity is a delicate subject and there are several requirements that must be met to have them appear in the Test Runner. In general, the tests appears in the Test Runner only if there is an associate asmdef file that contains reference to TestAssemblies, includes only the Editor platform, and references the NUnit library. The asmdef file is already setup correctly but it may be needed to explicitly tell Unity that our package is testable. To do so, you must modify the "MyUnityProject/Packages/manifest.json" file in your Unity project and add one entity to the testable list of packages:
+```
+{
+    "dependencies": {
+        ...
+        "johndoe.mycompany.sample-system": "3.0.0",
+        ...
+    },
+    "testables": ["johndoe.mycompany.sample-system"]
+}
+```
 
 ## Maintenance
-The project is maintained by me, feel free to reach out for a feedback or just
-to let me know if this was useful to you and saved you some time.
+The project is maintained by me. Feel free to reach out on LinkedIn or just open issues.
+
+## References
+Unity Documentation
+- [UPM structure](https://docs.unity3d.com/6000.3/Documentation/Manual/cus-layout.html)
+- [UPM add tests](https://docs.unity3d.com/6000.3/Documentation/Manual/cus-tests.html)
+- [UPM tests on Test Runner](https://discussions.unity.com/t/test-runner-not-showing-any-of-my-tests/729955/10)
