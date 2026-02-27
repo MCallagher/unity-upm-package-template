@@ -5,6 +5,8 @@ bin
 bin.meta
 obj
 obj.meta
+img
+img.meta
 *.csproj
 *.csproj.meta
 *.sln
