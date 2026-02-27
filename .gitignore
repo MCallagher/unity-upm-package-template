@@ -55,5 +55,4 @@ nunit-*.xml
 
 # Other
 *.sln
-*.meta
 .vscode

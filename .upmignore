@@ -1,8 +1,13 @@
 .github
 .vscode
-bin
-obj
 .upmignore
+bin
+bin.meta
+obj
+obj.meta
 *.csproj
+*.csproj.meta
 *.sln
+*.sln.meta
 *.slnx
+*.slnx.meta
