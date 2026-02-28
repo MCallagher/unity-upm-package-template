@@ -54,7 +54,7 @@ The placeholders appears both in file content and in file names; so the replace 
 | /README.md                            | update content to describe your package                          |
 
 ## Quickstart
-The overall workflow has just three phases: setup the template, develop locally, bring the package to Unity. But for clarity, all the required steps are explicitly described.
+The overall workflow has four phases: setup the template, develop locally, build the package for Unity, install the package in Unity. But for clarity, all the required steps are explicitly described.
 
 1. Clone the template
 2. Replace placeholders listed above
@@ -62,15 +62,19 @@ The overall workflow has just three phases: setup the template, develop locally,
 4. Develop the unit tests
 5. Run and debug tests locally
     - You may use the ```dotnet test```
-6. Push the changes to main
+6. Generate meta files for Unity
+    - (Required only for new files/folder without .meta identifier)
+    - Use the Asset Manager to load the package from local folder
+    - Meta files are generated automatically by Unity
+7. Push the changes to main
     - This step triggers the GitHub Action
-7. Generate the package on upm branch with the GitHub Action
+8. Generate the package on upm branch with the GitHub Action
     - The GITHUB_TOKEN must have the read and write permission on the repo
-8. Import package into Unity
-    - Use the Asset Manager to load the package
-9. Make tests visible in Unity
+9. Import package into Unity
+    - Use the Asset Manager to load the package from git (upm branch)
+10. Make tests visible in Unity
     - Add the package to dependencies and testables in "MyUnityProject/Packages/manifest.json"
-10. Run the test in Unity
+11. Run the test in Unity
     - The test can be run in the Test Runner in the Editor section
 
 ![Workflow suggested](/img/workflow.png)
@@ -104,6 +108,13 @@ The display of tests in Unity is a delicate subject and there are several requir
 }
 ```
 
+### Unity Meta files
+Unity requires all the files and folders to have an associated .meta file that stores basic information like the unique ID of the entity within Unity. The content of an UPM package is not an exception: somewhere in the development we need to create these files.
+
+A quick way to generate all the meta files is to import the package in Unity from a local folder using the Asset Manager. During this process Unity will automatically generate the meta files for all the elements of the package directly in the source folder.
+
+This process requires Unity to have write permissions on the package destination, therefore trying to do the same process importing the package from git will result in an error since Unity do not have such permissions on the repository.
+
 ## Maintenance
 The project is maintained by me. Feel free to reach out on LinkedIn or just open issues.
 
@@ -112,3 +123,4 @@ Unity Documentation
 - [UPM structure](https://docs.unity3d.com/6000.3/Documentation/Manual/cus-layout.html)
 - [UPM add tests](https://docs.unity3d.com/6000.3/Documentation/Manual/cus-tests.html)
 - [UPM tests on Test Runner](https://discussions.unity.com/t/test-runner-not-showing-any-of-my-tests/729955/10)
+- [How to install UPM package from Git](https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-giturl.html)
