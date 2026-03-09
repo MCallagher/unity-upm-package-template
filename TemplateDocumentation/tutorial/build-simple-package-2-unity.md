@@ -1,0 +1,92 @@
+# Tutorial: Build a simple package - Part 2: Unity
+In this tutorial, you will build a simple package using this Unity UPM Package Template. This second part cover the Unity development.
+
+You will build a custom package for a randomization library. The package MyRandom will provide a class Sampler that contains a Sample method to manage the sampling of items from a list.
+
+This tutorial assumes:
+- A package is developed locally (see [part 1](./build-simple-package-1-local.md))
+- VSCode is installed
+- Git is installed
+- Dotnet is installed
+- Unity is installed
+- A Unity project exists
+
+## 1. Create a upm branch
+Create a new branch to keep the clean version of the package, without useless files. To do so, open the console (ctrl+J, go to Terminal) and run the following commands:
+
+```
+git checkout -b upm
+git push -u origin upm
+```
+
+## 2. Check the GitHub Workflow
+Check that the branch in the workflow (.github/workflows/sync-upm.yml) referred at on.push.branches corresponds to the main branch in the repository. If not, rename the branch in the workflow definition.
+
+Then, go to your repository settings and grant the permissions to read and write to the user authenticated with the GITHUB_TOKEN.
+You can check the GitHub docs: [repository settings and permissions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/).
+
+## 3. Compute meta files
+Open a Unity project in the Unity Editor, then open the Package Manager and import the "my-random" package as a local folder.
+Meta files are generated automatically by Unity in the folder.
+
+If you followed the part 1 of this tutorial, you won't see them in VSCode (due to .vscode/settings.json) but you can see them if you explore the directory.
+
+You can check the Unity docs: [import the package from local folder](https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-local.html).
+
+## 2. Push changes
+Commit the changes (all the meta files) and push them to the origin. You can use the following commands from terminal.
+
+```
+git add --all
+git commit -m "Add Unity meta files"
+git push
+```
+
+## 3. Verify the workflow worked
+Verify that the GitHub Action successfully updated the "upm" branch.
+
+You can check it at this link (replace the user):
+
+```
+https://github.com/<user>/my-random/actions/workflows/sync-upm.yml
+```
+
+## 4. Reload package in Unity
+Open a Unity project in the Unity Editor, then open the Package Manager and remove the "my-random" package previously imported.
+
+Import "my-random" package as a git repository targetting the upm branch. The repository reference is the following (replace the user):
+
+```
+https://github.com/<user>/my-random.git#upm
+```
+
+You can check the Unity docs:
+- [import the package from git](https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-giturl.html)
+- [specify git revision](https://docs.unity3d.com/6000.3/Documentation/Manual/upm-git.html#revision)
+
+
+## 5. Register package as testable
+Register the package as a "testable" package in the manifest of the unity project.
+
+To do so, open the "MyUnityProject/Packages/manifest.json" files of the Unity project, check that the package appears in the "dependencies" dictionary and add it to the "testables" list:
+
+```
+{
+    "dependencies": {
+        ...
+        "isaacasimov.foundation.my-random": "0.1.0",
+        ...
+    },
+    "testables": ["isaacasimov.foundation.my-random"]
+}
+```
+
+You can check the topic in Unity community: [upm test on test runner](https://discussions.unity.com/t/test-runner-not-showing-any-of-my-tests/729955/10)
+
+## 6. Perform the test
+Open the Test Runner and go to the Editor section. Run the package test that we added here.
+
+## Conclusion
+We imported into Unity a simple random utility package and tested with Unity Test Runner. The package now works both locally and within Unity.
+
+Back to [Documentation Hub](../index.md)
