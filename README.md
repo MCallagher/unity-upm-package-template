@@ -2,7 +2,7 @@
 # Unity UPM Package Template
 This repository provides a template to develop a UPM package for Unity and is designed to speed up setup, development, and testing of packages that contain pure logic (no Unity-specific runtime classes). It provides a framework that solves many issues that could hinder the efficiency of the development.
 
-![Overview](/img/overview.png)
+![Overview](/TemplateDocumentation/img/overview.png)
 
 ## Key Features
 - **Develop and test without Unity.** Write and run tests using dotnet/NUnit.
@@ -29,7 +29,7 @@ Overall the layout of files and folders follows the [Unity standard structure fo
 
 The repository uses two branches, main and upm, that cover local and unity side: the main branch is used to develop and test the software for the package whereas the upm branch contains only the minimal information required by Unity for a UPM package. The content of this branch is kept aligned by a GitHub Action.
 
-![How it works](/img/howitworks.png)
+![How it works](/TemplateDocumentation/img/howitworks.png)
 
 ## Placeholders
 The template contains several placeholders that are used consistently to simplify their replacements with the real values required to instantiate a new package. The placeholder list with their meaning is shown in the following table.
@@ -77,7 +77,7 @@ The overall workflow has four phases: setup the template, develop locally, build
 11. Run the test in Unity
     - The test can be run in the Test Runner in the Editor section
 
-![Workflow suggested](/img/workflow.png)
+![Workflow suggested](/TemplateDocumentation/img/workflow.png)
 
 ## Annex
 The section that follows present in deeper detail some of the topics presented above.
