@@ -53,6 +53,15 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
-# Other
+# EXTRA
+
+# C# solution
 *.sln
+
+# VSCode
 .vscode
+
+# Unity metadata
+*.sln.meta
+[Bb]in.meta
+[Oo]bj.meta
