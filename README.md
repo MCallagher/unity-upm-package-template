@@ -20,10 +20,10 @@ This documentation combines four types of content:
     - [Build a simple package - Part 1: Local](tutorial/build-simple-package-1-local.md)
     - [Build a simple package - Part 2: Unity](tutorial/build-simple-package-2-unity.md)
 - **How To**: Guides on how to achieve specific objectives
-    - Setup the repository for custom package
-    - Devlop and test locally
-- **Reference**: Technical description of the software
     - wip
+- **Reference**: Technical description of the software
+    - [Package structure](./reference/package-structure.md)
+    - [Web Resources](./reference/web-resources.md)
 - **Explanation**: In depth explanation of specific topics
     - wip
 
