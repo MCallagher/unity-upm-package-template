@@ -7,6 +7,7 @@ This tutorial assumes:
 - A GitHub account
 - VSCode is installed
 - Git is installed
+- Dotnet is installed
 
 ## 1. Create a GitHub repository
 Create a new repository on GitHub following this link: [GitHub/new](https://github.com/new). Be sure to:
@@ -25,10 +26,17 @@ git clone https://github.com/<user>/my-random.git
 ```
 
 ## 3. Download latest template release
-Go to [unity-upm-package-template](https://github.com/MCallagher/unity-upm-package-template) and download the latest release of the package in zip format. Unzip the package in the "my-random" folder that contains the repository.
+Go to [unity-upm-package-template](https://github.com/MCallagher/unity-upm-package-template) and download the latest release of the package in zip format. Unzip the package and move the content in the folder "my-random" that contains the repository.
+
+Delete the folder "TemplateDocumentation" and replace the content of the "README.md" file with:
+
+```
+# My Random - A random utility package
+This package provide utility funcitons to perform random-based tasks, e.g. sampling.
+```
 
 ## 4. Setup VSCode environment
-Add VSCode setting file to hide files and folders we are not interesting in and setup the C# project.
+Open the folder in VSCode and add a VSCode setting file to hide files and folders we are not interesting in and setup the C# project.
 
 To do so, create a folder ".vscode" in the root folder and inside it create the file "settings.json" with this content:
 
@@ -40,8 +48,7 @@ To do so, create a folder ".vscode" in the root folder and inside it create the 
         "Bin/": true,
         "obj/": true,
         "Obj/": true,
-    },
-    "dotnet.defaultSolution": "my-random.sln"
+    }
 }
 ```
 
@@ -133,17 +140,6 @@ dotnet test
 ```
 
 It will perform the unit test we defined and print the results, that should be positive.
-
-## 7. Clean the repository
-Finally, clean the elements that still refers to the template
-- Delete the "TemplateDocumentation" folder
-- Change the README.md to reflect what MyRandom package is for
-
-A possible content for the readme:
-```
-# My Random - A random utility package
-This package provide utility funcitons to perform random-based tasks, e.g. sampling.
-```
 
 ## Conclusion
 We developed a simple random utility package with unit test and we prepared it for Unity. The package now works locally and it is possible to extend it with more features and more tests.
