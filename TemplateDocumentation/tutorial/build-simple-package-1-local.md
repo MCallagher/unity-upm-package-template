@@ -78,7 +78,7 @@ Update the package definition file (package.json) with the author and the packag
 
 | Key | Before | After |
 | --- | --- | --- |
-| name | johndoe.mycompany.sample-system | isaacasimov.foundation.my-random|
+| name | johndoe.mycompany.sample-system | isaacasimov.foundation.my-random |
 | description | Description placeholder | My random package |
 | displayName | Sample System | My Random |
 | author.name | John Doe | Isaac Asimov |
