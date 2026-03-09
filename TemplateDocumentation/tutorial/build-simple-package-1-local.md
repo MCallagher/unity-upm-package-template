@@ -1,23 +1,33 @@
 # Tutorial: Build a simple package - Part 1: local
-In this tutorial, you will build a simple package using this Unity UPM Package Template.
+In this tutorial, you will build a simple package using this Unity UPM Package Template. This first part cover the local development.
 
 You will build a custom package for a randomization library. The package MyRandom will provide a class Sampler that contains a Sample method to manage the sampling of items from a list.
 
 This tutorial assumes:
+- A GitHub account
 - VSCode is installed
 - Git is installed
 
-## 1. Cloning the repository
-Open a terminal from your favourite directory and clone the template repository.
+## 1. Create a GitHub repository
+Create a new repository on GitHub following this link: [GitHub/new](https://github.com/new). Be sure to:
+- Name the repository "my-random"
+- Set the repository public
+- Don't add a README
+- Don't add a .gitignore
+- Don't add a license
 
-You can use the following command:
+## 2. Setup the repository locally
+Open a terminal in a folder of your choice and clone the repository just created.
+
+You can use the following command (replacing the user):
 ```
-git clone https://github.com/MCallagher/unity-upm-package-template.git
+git clone https://github.com/<user>/my-random.git
 ```
 
-Then rename the folder from "unity-upm-package-template" to "my-random" and then open the folder in VSCode.
+## 3. Download latest template release
+Go to [unity-upm-package-template](https://github.com/MCallagher/unity-upm-package-template) and download the latest release of the package in zip format. Unzip the package in the "my-random" folder that contains the repository.
 
-## 2. Setup VSCode environment
+## 4. Setup VSCode environment
 Add VSCode setting file to hide files and folders we are not interesting in and setup the C# project.
 
 To do so, create a folder ".vscode" in the root folder and inside it create the file "settings.json" with this content:
@@ -35,33 +45,28 @@ To do so, create a folder ".vscode" in the root folder and inside it create the 
 }
 ```
 
-## 3. Replace placeholders
+## 4. Replace the placeholders
 Replace the placeholders with actual values for our packages. This process can be done mostly with a find-replace at project level while the remaining placeholders require file renaming.
 
-### 3.1 Package namespace
+### 4.1 Package namespace
 Our package's namespace will be "MyRandom" so we need to replace the placeholder name "SampleSystem".
 
-Open "replace in files" feature of VSCode (ctrl+shift+H), search for "SampleSystem" and replace with "MyRandom", finally replace all the matches.
+To replace the appearances in content, open "replace in files" feature of VSCode (ctrl+shift+H), search for "SampleSystem" and replace with "MyRandom", finally replace all the matches:
 
-The following results should appear:
-- SampleSystem.asmdef
-    - "name" definition
-    - "rootNamespace" definition
-- SampleSystem.Test.asmdef
-    - "name" definition
-    - "rootNamespace" definition
-    - "reference" list
-- README.md
-    - TODO: REMOVE REFERENCES
+| File | Appearances |
+| --- | --- |
+| SampleSystem.asmdef | "name" definition, "rootNamespace" definition |
+| SampleSystem.Test.asmdef | "name" definition, "rootNamespace" definition, "reference" list |
 
-Then, rename the following files:
+Then, rename the files that contains the namespace in the filename:
+
 | Location | Before | After |
 | --- | --- | --- |
 | /Editor | SampleSystem.asmdef | MyRandom.asmdef |
 | /Test/Editor | SampleSystem.Test.asmdef | MyRandom.Test.asmdef |
 | / | SampleSystem.csproj | MyRandom.csproj |
 
-### 3.2 Package definition
+### 4.2 Package definition
 Update the package definition file (package.json) with the author and the package name as follow:
 
 | Key | Before | After |
@@ -72,7 +77,7 @@ Update the package definition file (package.json) with the author and the packag
 | author.name | John Doe | Isaac Asimov |
 | author.email | john.doe@email.com | isaac.asimov@email.com |
 
-## 4. Create Sampler class
+## 5. Create Sampler class
 In folder Editor, create the file "Sampler.cs" with this code.
 
 ```
@@ -96,7 +101,7 @@ namespace MyRandom
 }
 ```
 
-## 5. Create SamplerTest class
+## 6. Create SamplerTest class
 In folder Test/Editor, create the file "SamplerTest.cs" with this code:
 
 ```
@@ -132,7 +137,6 @@ It will perform the unit test we defined and print the results, that should be p
 ## 7. Clean the repository
 Finally, clean the elements that still refers to the template
 - Delete the "TemplateDocumentation" folder
-- Delete the "unity-upm-package-template.sln" file
 - Change the README.md to reflect what MyRandom package is for
 
 A possible content for the readme:

@@ -53,10 +53,11 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
+
 # EXTRA
 
 # C# solution
-*.sln
+#*.sln
 
 # VSCode
 .vscode
