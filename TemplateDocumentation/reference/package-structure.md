@@ -17,3 +17,6 @@ The following schema describe what the main folder and file purposes and if they
 | SampleSystem.csproj                   | x     | x     | dotnet project file for local development and tests      |
 | package.json                          |       | x     | UPM package metadata                                     |
 | .upmignore                            | x     |       | Files and patterns excluded when building the UPM branch |
+
+
+[unity-upm-structure]: https://docs.unity3d.com/6000.3/Documentation/Manual/cus-layout.html "Unity Manual - UPM package structure"

@@ -22,10 +22,13 @@ This documentation combines four types of content:
 - **How To**: Guides on how to achieve specific objectives
     - wip
 - **Reference**: Technical description of the software
-    - [Package structure](./reference/package-structure.md)
-    - [Web Resources](./reference/web-resources.md)
+    - [Placeholder list](reference/placeholder-list.md)
+    - [Package structure](reference/package-structure.md)
+    - [Web Resources](reference/web-resources.md)
 - **Explanation**: In depth explanation of specific topics
-    - wip
+    - [UPM Builder Action](explanation/upm-builder-action.md)
+    - [Unity Test Runner](explanation/unity-test-runner.md)
+    - [Unity Meta Files](explanation/unity-meta-files.md)
 
 ## Maintenance
 The project is loosely maintained by me. Feel free to reach out on LinkedIn or just open issues.

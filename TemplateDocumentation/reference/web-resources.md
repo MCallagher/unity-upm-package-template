@@ -7,6 +7,7 @@ This is a collection of resources that can be used to understand better Unity pa
     - [UPM package structure][unity-upm-structure]
     - [Asset metadata][unity-metadata]
     - [Install UPM from git][unity-upm-git]
+    - [Specify git revision][unity-upm-git-revision]
     - [Install UPM from local folder][unity-upm-local]
     - [UPM package tests][unity-upm-test]
 - [Unity Community][unity-comm]
@@ -21,6 +22,7 @@ This is a collection of resources that can be used to understand better Unity pa
 [unity-man]: https://docs.unity3d.com/Manual/UnityManual.html "Unity Manual"
 [unity-metadata]: https://docs.unity3d.com/2023.2/Documentation/Manual/AssetMetadata.html "Unity Manual - Asset metadata"
 [unity-upm-creation]: https://docs.unity3d.com/Manual/cus-pkg-lp.html "Unity Manual - UPM creation"
+[unity-upm-git-revision]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-git.html#revision) "Unity Manual - Specify git revision"
 [unity-upm-git]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-giturl.html "Unity Manual - Install UPM from git"
 [unity-upm-local]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-local.html "Unity Manual - Install UPM from local folder"
 [unity-upm-structure]: https://docs.unity3d.com/6000.3/Documentation/Manual/cus-layout.html "Unity Manual - UPM package structure"
