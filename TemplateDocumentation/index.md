@@ -10,7 +10,7 @@ This documentation follows the [divio documentation system][divio-docs] that com
 - [Build a simple package - Part 2: Unity](/TemplateDocumentation/tutorial/build-simple-package-2-unity.md)
 
 ## How To
-- 
+- [Hide meta files in VSCode](/TemplateDocumentation/how-to/hide-meta-files-in-vscode.md)
 
 ## Reference
 - [Placeholder list](/TemplateDocumentation/reference/placeholder-list.md)

@@ -20,7 +20,7 @@ This documentation combines four types of content:
     - [Build a simple package - Part 1: Local](/TemplateDocumentation/tutorial/build-simple-package-1-local.md)
     - [Build a simple package - Part 2: Unity](/TemplateDocumentation/tutorial/build-simple-package-2-unity.md)
 - **How To**: Guides on how to achieve specific objectives
-    - wip
+    - [Hide meta files in VSCode](/TemplateDocumentation/how-to/hide-meta-files-in-vscode.md)
 - **Reference**: Technical description of the software
     - [Placeholder list](/TemplateDocumentation/reference/placeholder-list.md)
     - [Package structure](/TemplateDocumentation/reference/package-structure.md)
