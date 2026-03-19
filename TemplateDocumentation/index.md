@@ -23,4 +23,4 @@ This documentation follows the [divio documentation system][divio-docs] that com
 - [Unity Test Runner](/TemplateDocumentation/explanation/unity-test-runner.md)
 - [Unity Meta Files](/TemplateDocumentation/explanation/unity-meta-files.md)
 
-[divio-docs]: https://docs.divio.com/documentation-system/
+[divio-docs]: https://docs.divio.com/documentation-system/ "Divio Documentation System"

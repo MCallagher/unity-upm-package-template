@@ -31,6 +31,5 @@ This documentation combines four types of content:
     - [Unity Test Runner](/TemplateDocumentation/explanation/unity-test-runner.md)
     - [Unity Meta Files](/TemplateDocumentation/explanation/unity-meta-files.md)
 
-
 ## Maintenance
 The project is loosely maintained by me. Feel free to reach out on LinkedIn or just open issues.
