@@ -14,10 +14,16 @@ This is a collection of resources that can be used to understand better Unity pa
     - [UPM test on Test Runner][unity-upm-test-runner]
 - [GitHub Docs][github-docs]
     - [Repository token permissions][github-token-permission]
+    - [GitHub Flow][github-docs-githubflow]
+- [GitHub Flow][githubflow]
+
+Back to [Documentation Hub](../index.md)
 
 
+[github-docs-githubflow]: https://docs.github.com/en/get-started/using-github/github-flow "GitHub Docs - GitHub Flow"
 [github-docs]: https://docs.github.com/en "GitHub Docs"
 [github-token-permission]: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository "GitHub Docs - Repository token permissions"
+[githubflow]: https://githubflow.github.io "GitHub Flow"
 [unity-comm]: https://discussions.unity.com "Unity Community"
 [unity-man]: https://docs.unity3d.com/Manual/UnityManual.html "Unity Manual"
 [unity-metadata]: https://docs.unity3d.com/2023.2/Documentation/Manual/AssetMetadata.html "Unity Manual - Asset metadata"

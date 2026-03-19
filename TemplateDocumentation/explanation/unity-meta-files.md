@@ -5,6 +5,8 @@ A quick way to generate all the meta files is to [import the package in Unity fr
 
 This process requires Unity to have write permissions on the package destination, therefore trying to do the same process importing the package from git will result in an error since Unity do not have such permissions on the repository.
 
+Back to [Documentation Hub](../index.md)
+
 
 [unity-metadata]: https://docs.unity3d.com/2023.2/Documentation/Manual/AssetMetadata.html "Unity Manual - Asset metadata"
 [unity-upm-local]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-local.html "Unity Manual - Install UPM from local folder"

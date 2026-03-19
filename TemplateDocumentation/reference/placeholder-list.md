@@ -18,3 +18,5 @@ The list of the posistions where these placeholders are used is reported in the 
 | /Test/Editor/SampleSystem.Test.asmdef | filename (1); definition of name (1), rootNamespace (1), list element in references (1)     |
 | /package.json                         | definition of name (2), author.name (3), author.email (4), displayName (5), description (6) |
 | /SampleSystem.csproj                  | filename (1)                                                                                |
+
+Back to [Documentation Hub](../index.md)

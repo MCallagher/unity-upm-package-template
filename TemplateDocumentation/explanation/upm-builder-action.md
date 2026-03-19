@@ -3,4 +3,7 @@ The repository includes a GitHub Actions workflow (.github/workflows/sync-upm.ym
 
 To allow the workflow to push the cleaned package you must enable read and write [permissions for the GITHUB_TOKEN][github-token-permission] in the repository settings.
 
+Back to [Documentation Hub](../index.md)
+
+
 [github-token-permission]: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository "GitHub Docs - Repository token permissions"
