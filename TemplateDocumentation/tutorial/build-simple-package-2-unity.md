@@ -99,8 +99,8 @@ We imported into Unity a simple random utility package and tested with Unity Tes
 Back to [Documentation Hub](../index.md)
 
 
-[github-token-permission]: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/
+[github-token-permission]: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/ "Github Docs - GitHub Token Permission"
 [unity-upm-local]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-local.html "Unity Manual - Install UPM from local folder"
 [unity-upm-git]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-ui-giturl.html "Unity Manual - Install UPM from git"
-[unity-upm-git-revision]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-git.html#revision) "Unity Manual - Specify git revision"
+[unity-upm-git-revision]: https://docs.unity3d.com/6000.3/Documentation/Manual/upm-git.html#revision "Unity Manual - Specify git revision"
 [unity-upm-test-runner]: https://discussions.unity.com/t/test-runner-not-showing-any-of-my-tests/729955/10 "Unity Community - UPM test on Test Runner"

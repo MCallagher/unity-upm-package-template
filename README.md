@@ -17,18 +17,20 @@ This repository provides a template to develop a UPM package for Unity and is de
 This documentation combines four types of content:
 
 - **Tutorial**: Step-by-step guides to learn how to use this template
-    - [Build a simple package - Part 1: Local](tutorial/build-simple-package-1-local.md)
-    - [Build a simple package - Part 2: Unity](tutorial/build-simple-package-2-unity.md)
+    - [Build a simple package - Part 1: Local](/TemplateDocumentation/tutorial/build-simple-package-1-local.md)
+    - [Build a simple package - Part 2: Unity](/TemplateDocumentation/tutorial/build-simple-package-2-unity.md)
 - **How To**: Guides on how to achieve specific objectives
     - wip
 - **Reference**: Technical description of the software
-    - [Placeholder list](reference/placeholder-list.md)
-    - [Package structure](reference/package-structure.md)
-    - [Web Resources](reference/web-resources.md)
+    - [Placeholder list](/TemplateDocumentation/reference/placeholder-list.md)
+    - [Package structure](/TemplateDocumentation/reference/package-structure.md)
+    - [Web Resources](/TemplateDocumentation/reference/web-resources.md)
 - **Explanation**: In depth explanation of specific topics
-    - [UPM Builder Action](explanation/upm-builder-action.md)
-    - [Unity Test Runner](explanation/unity-test-runner.md)
-    - [Unity Meta Files](explanation/unity-meta-files.md)
+    - [Development Workflow](/TemplateDocumentation/explanation/development-workflow.md)
+    - [UPM Builder Action](/TemplateDocumentation/explanation/upm-builder-action.md)
+    - [Unity Test Runner](/TemplateDocumentation/explanation/unity-test-runner.md)
+    - [Unity Meta Files](/TemplateDocumentation/explanation/unity-meta-files.md)
+
 
 ## Maintenance
 The project is loosely maintained by me. Feel free to reach out on LinkedIn or just open issues.
